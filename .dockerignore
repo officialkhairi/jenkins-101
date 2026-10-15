@@ -1,0 +1,3 @@
+# Only the built binary is needed in the app image
+*
+!app
