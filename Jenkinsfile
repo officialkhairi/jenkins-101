@@ -2,6 +2,11 @@ pipeline {
   // Runs on the Jenkins container itself, which has the Docker CLI
   agent any
 
+  // Check GitHub for new commits about every 2 minutes; builds only if something changed
+  triggers {
+    pollSCM('H/2 * * * *')
+  }
+
   environment {
     APP_NAME = 'hello-app'
     APP_PORT = '9090'
